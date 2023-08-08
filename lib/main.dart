@@ -1,9 +1,8 @@
 // ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:internet_connectivity/bloc/internet_bloc.dart';
-import 'package:internet_connectivity/screens/home_screen.dart';
+import 'package:internet_connectivity/cubits/internet_cubit.dart';
+import 'package:internet_connectivity/screens/cubit_screen.dart';
 
 void main(List<String> args) {
   runApp(ConnectivityApp());
@@ -15,9 +14,9 @@ class ConnectivityApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => InternetBloc(),
+      create: (context) => InternetCubit(),
       child: MaterialApp(
-        home: HomeScreen(),
+        home: CubitScreen(),
       ),
     );
   }
